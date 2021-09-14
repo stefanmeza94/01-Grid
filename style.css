@@ -1,0 +1,155 @@
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --grayish-blue: hsl(217, 19%, 35%);
+  --blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+
+  --ff-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-family);
+  font-size: 13px;
+  background-color: var(--light-grayish-blue);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+.container {
+  padding: 25px;
+  max-width: 90%;
+  margin: 0 auto;
+  display: grid;
+  row-gap: 1rem;
+}
+
+/* DESKTOP LAYOUT */
+/* RESPONSIVE */
+@media (min-width: 860px) {
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    max-width: 1200px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(250px, auto);
+    gap: 2rem;
+  }
+
+  .container .purple {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  .container .kira {
+    grid-area: 1 / 4 / 3 / 5;
+  }
+
+  .container .blakish-blue {
+    grid-area: 2 / 2 / 3 / 4;
+  }
+}
+
+.container_card {
+  position: relative;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.purple {
+  background-color: var(--moderate-violet)
+}
+
+.grayish-blue {
+  background-color: var(--grayish-blue);
+}
+
+.light-gray {
+  background-color: var(--white);
+}
+
+.blakish-blue {
+  background-color: var(--blackish-blue);
+}
+
+.quotation {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  z-index: 0;
+}
+
+.container_card > div {
+  display: flex;
+  align-items: center;
+}
+
+.image-container {
+  margin-right: 15px;
+  width: 35px;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.purple .image-container img, 
+.blakish-blue .image-container img {
+  border: 3px solid rgba(162, 134, 207, 0.6);
+}
+
+/* white class */
+.white .person_name {
+  color: rgb(207, 207, 207);
+  margin-bottom: 1px;
+}
+
+.white span {
+  color: rgba(207, 207, 207, 0.5);
+  font-size: 12px;
+}
+
+.white .heading_description {
+  color: var(--light-gray);
+  margin: 15px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.white .quotation_descripton {
+  color: rgba(207, 207, 207, 0.7);
+}
+
+/* black class */
+.black .person_name {
+  margin-bottom: 1px;
+  color: rgb(25, 33, 46);
+}
+
+.black span {
+  color: rgba(25, 33, 46, 0.5);
+  font-size: 12px;
+}
+
+.black .heading_description {
+  color: rgb(72, 85, 106);
+  margin: 15px 0;
+}
+
+.black .quotation_descripton {
+  color: rgba(72, 85, 106, 0.7);
+}
